@@ -1,0 +1,152 @@
+<ol type="1">
+<li>17轮的LBLOCK相关密钥不可能差分</li>
+</ol>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">left</th>
+<th style="text-align: center;">right</th>
+<th style="text-align: center;">subkey</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0000 0000 0000 0000 0000 0000 0000
+0000</td>
+<td style="text-align: center;">0000 0000 0000 0000 0000 0011 0000
+0000</td>
+<td style="text-align: center;">00000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0000 0000 0000 0011 0000 0000 0000
+0000</td>
+<td style="text-align: center;">0000 0000 0000 0000 0000 0000 0000
+0000</td>
+<td style="text-align: center;">00030000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0000 0000 0000 0000 0000 0000 0000
+0000</td>
+<td style="text-align: center;">0000 0000 0000 0011 0000 0000 0000
+0000</td>
+<td style="text-align: center;">00000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0000 0011 0000 0000 0000 0000 0000
+0000</td>
+<td style="text-align: center;">0000 0000 0000 0000 0000 0000 0000
+0000</td>
+<td style="text-align: center;">00000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">??01 0000 0000 0000 0000 0000 0000
+0000</td>
+<td style="text-align: center;">0000 0011 0000 0000 0000 0000 0000
+0000</td>
+<td style="text-align: center;">01800000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">??1? 0000 ???? ?1?? 0000 0000 0000
+0011</td>
+<td style="text-align: center;">??01 0000 0000 0000 0000 0000 0000
+0000</td>
+<td style="text-align: center;">00000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0000 ???? ???? ???? 0000 ??10 ??01
+0000</td>
+<td style="text-align: center;">??1? 0000 ???? ?1?? 0000 0000 0000
+0011</td>
+<td style="text-align: center;">00000006</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">???? ???? 0000 ???? ???? ???? ??1?
+????</td>
+<td style="text-align: center;">0000 ???? ???? ???? 0000 ??10 ??01
+0000</td>
+<td style="text-align: center;">30000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">???? ???? ???? ??10 ???? ???? ????
+????</td>
+<td style="text-align: center;">???? ???? 0000 ???? ???? ???? ??1?
+????</td>
+<td style="text-align: center;">00000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">???? ???? ???? ???? ???? ???? ????
+????</td>
+<td style="text-align: center;">???? ???? ???? ??10 ???? ???? ????
+????</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">???? 0000 ???? 0000 ???? ???? ????
+0000</td>
+<td style="text-align: center;">???? ???? ???? ??01 ???? ???? ????
+0000</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">???? ??01 ?1?0 0000 ???? 0000 0000
+0000</td>
+<td style="text-align: center;">???? 0000 ???? 0000 ???? ???? ????
+0000</td>
+<td style="text-align: center;">000000c0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">???? 0000 0000 0000 ???? 0000 0011
+0000</td>
+<td style="text-align: center;">???? ??01 ?1?0 0000 ???? 0000 0000
+0000</td>
+<td style="text-align: center;">00000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">?1?0 0000 0000 0000 0000 0000 0000
+0000</td>
+<td style="text-align: center;">???? 0000 0000 0000 ???? 0000 0011
+0000</td>
+<td style="text-align: center;">00000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0000 0000 0000 0000 0011 0000 0000
+0000</td>
+<td style="text-align: center;">?1?0 0000 0000 0000 0000 0000 0000
+0000</td>
+<td style="text-align: center;">00006000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0000 0000 0000 0000 0000 0000 0000
+0000</td>
+<td style="text-align: center;">0000 0000 0000 0000 0011 0000 0000
+0000</td>
+<td style="text-align: center;">00000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0000 0000 0011 0000 0000 0000 0000
+0000</td>
+<td style="text-align: center;">0000 0000 0000 0000 0000 0000 0000
+0000</td>
+<td style="text-align: center;">00000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0000 0000 0000 0000 0000 0000 0000
+0000</td>
+<td style="text-align: center;">0000 0000 0011 0000 0000 0000 0000
+0000</td>
+<td style="text-align: center;">00300000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0011 0000 0000 0000 0000 0000 0000
+0000</td>
+<td style="text-align: center;">0000 0000 0000 0000 0000 0000 0000
+0000</td>
+<td style="text-align: center;">00000000</td>
+</tr>
+</tbody>
+</table>
