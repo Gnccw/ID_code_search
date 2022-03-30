@@ -5,6 +5,19 @@ from cao_pylib import operation
 def undis2diff(x):
     return x[0]+x[1]
 
+def remove_value(m,x,value):
+    v=[]
+    for i in range(len(value)):
+        if value[i]!=' ':
+            v.append(eval(value[i]))
+    constr=LinExpr()
+    for i in range(len(v)):
+        if v[i]==1:
+            constr+=1-x[i]
+        if v[i]==0:
+            constr+=x[i]
+    m.addConstr(constr>=1)
+
 def left_right_xchange(x):
     """
     将x分为左右两部分并交换
@@ -270,7 +283,7 @@ def main(fore,last):
     for i in range(80):
         constr+=kk[i]
     m.addConstr(constr>=1)
-    #m.addConstr(constr<=4)
+    m.addConstr(constr<=40)
     
 #------输入约束，差分不为0--------------------------------------------------------------------------
 
@@ -279,8 +292,7 @@ def main(fore,last):
     for i in range(16):
         for j in range(8):
             constr+=kk[i*80+j]
-    m.addConstr(constr<=5)
-
+    m.addConstr(constr<=2)
 
     Lblock(m, fore[0],fore[1], fore[2], fore[3],fx,fs_in,fs_out,fxor_out,fk)
     Lblock_inv(m, last[0],last[1], last[2], last[3],bx,bs_in,bs_out,bxor_out,bk)
@@ -296,7 +308,14 @@ def main(fore,last):
             m.addConstr(bk[(bf*32+i)*2]==0)
             m.addConstr(bk[(bf*32+i)*2+1]==kk[(fore[0]+last[0]-bf-1)*80+i])
             #m.addConstr(bk[(bf*32+i)*2+1]==0)
-
+    value='0000 0010'
+    value1='0000 0001'
+    kk_v=[]
+    for i in range(len(kk)):
+        kk_v.append(kk[i])
+    remove_value(m, kk_v[400:408],value)
+    remove_value(m, kk_v[400:408],value1)
+    
     m.Params.OutputFlag=0
     m.optimize()
     print(fore[2])
@@ -329,8 +348,10 @@ def main(fore,last):
             #print()
         for i in range(len(kk_x)):
             print(kk_x[i])
-    
 
 for i in range(64):
     main([8,64,i,1],[8,64,i,0])
-    
+
+
+
+

@@ -433,8 +433,11 @@ for i in res:
 '''
 
 
-ssbox=cipher_sbox.t_twine_pi
-print(ssbox)
-s=undisturb_sbox_invert(ssbox)
-for i in s:
-    print(i)
+s=cipher_sbox.lblock_sbox_schedule_8
+new_sbox=[0 for i in range(256)]
+for i in range(16):
+    for j in range(16):
+        new_sbox[j*16+i]=s[i]^i
+ddt=sbox.gen_ddt(new_sbox)
+for dt in ddt:
+    print(ddt)
