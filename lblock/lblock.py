@@ -279,7 +279,7 @@ def main(fore,last):
     for i in range(16):
         for j in range(8):
             constr+=kk[i*80+j]
-    m.addConstr(constr<=10)
+    m.addConstr(constr<=5)
 
 
     Lblock(m, fore[0],fore[1], fore[2], fore[3],fx,fs_in,fs_out,fxor_out,fk)
@@ -331,6 +331,6 @@ def main(fore,last):
             print(kk_x[i])
     
 
-for i in range(46,47):
-    main([9,64,i,1],[8,64,i,0])
+for i in range(64):
+    main([8,64,i,1],[8,64,i,0])
     

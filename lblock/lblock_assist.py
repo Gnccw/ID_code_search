@@ -2,6 +2,7 @@ from cao_pylib import sbox_model
 from cao_pylib import cipher_sbox
 from cao_pylib import sbox
 from cao_pylib import operation
+import string
 
 cnf=["(0'+14)(6'+12)(4'+12)(3'+12)(2'+3)(0+3+5+7+14')(1'+12)(3'+14)(0'+1)(4'+5)(6'+7)(14'+15)(11+15')(8+9')(9+10')(10+11')(12'+13)(5+7'+14)(1+3+4+6+12')(7+8'+15)(12+13'+14)(7+13+15')(4'+15)(13+14')(6'+15)(11+13')(5'+13+15)(5'+13'+14+15')(0+3+4+5'+6+7'+14')",
 "(0'+14)(6'+12)(4'+12)(3'+12)(2'+3)(0+3+5+7+14')(1'+12)(3'+14)(0'+1)(4'+5)(6'+7)(14'+15)(11+15')(8+9')(9+10')(10+11')(12'+13)(5+7'+14)(1+3+4+6+12')(7+8'+15)(12+13'+14)(7+13+15')(4'+15)(13+14')(6'+15)(11+13')(5'+13+15)(5'+13'+14+15')(0+3+4+5'+6+7'+14')",
@@ -25,7 +26,14 @@ cnf9="(0+1+5'+7)(0+4'+6+7)(0'+4+6+7)(1'+3+4'+6+7')(0+1'+5+7)(0'+1+2'+6'+7')(0+1+
 #sbox_model.gen_ine_from_cnf(cnf8, 'lblock//ine//sbox_ine8.txt')
 #sbox_model.gen_ine_from_cnf(cnf9, 'lblock//ine//sbox_ine9.txt')
 
-s=cipher_sbox.twine_sbox
-ddt=sbox.gen_ddt(s)
-for dt in ddt:
-    print(dt)
+s='1001 1110 0010 0110 0010 1101 1011 0100'
+
+def bin2hex(s):
+    s=s.split(' ')
+    res=''
+    for i in range(len(s)):
+        res+=hex(eval('0b'+s[i]))[2:]
+    print(str.upper(res))
+print(str.lower("BBF9FF98"))
+
+    
