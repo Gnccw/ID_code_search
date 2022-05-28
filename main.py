@@ -360,7 +360,6 @@ def tri_pset2bin_pset(a):
         b.append(triList2binList(i))
     return b
 
-
 '''
 for i in range(8):
     res=undisturb_sbox_invert(cipher_sbox.lblock_sbox[i])
@@ -432,9 +431,14 @@ for i in res:
 #sbox.write_patterns_csv(csv,'print/print_sbox_inv.csv')
 '''
 
+'''
+s=cipher_sbox.lblock_sbox_schedule_8
+new_sbox=[0 for i in range(256)]
+for i in range(16):
+    for j in range(16):
+        new_sbox[j*16+i]=s[i]^i
+ddt=sbox.gen_ddt(new_sbox)
+for dt in ddt:
+    print(ddt)
+'''
 
-ssbox=cipher_sbox.t_twine_pi
-print(ssbox)
-s=undisturb_sbox_invert(ssbox)
-for i in s:
-    print(i)
