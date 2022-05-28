@@ -406,16 +406,8 @@ text.m.write('ascon\\ascon_inv.lp')
 '''
 
 
-for i in range(0,320,32):
-    print(i)
-    test=Ascon_inv(1,320,64,1)
-    test.gen_constr()
-    #test.m.write('ascon/test_inv.lp')
-    test.m.Params.OutputFlag=0
-    #test.m.Params.timelimit=10
-    test.m.optimize()
-    if test.m.status!=GRB.Status.INFEASIBLE:
-        print(i,'yes')
-        _get_value_inv(test)
-        break       
-
+if __name__=='__main__':
+    t1=Ascon(3,1 , 0, 0)
+    t1.gen_constr()
+    t1.m.optimize()
+    

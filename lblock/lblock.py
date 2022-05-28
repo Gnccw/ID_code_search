@@ -314,7 +314,7 @@ def main(fore,last):
 
 
         for r in range(fore[0]):
-            print('| '+fx_s[r][:40]+' | '+fx_s[r][40:]+' | '+kk_x[r][:40]+'|') 
+            print('| '+fx_s[r][:40]+' | '+fx_s[r][40:]+' | '+kk_x[r][0:]+'|') 
             #print(kk_x[r][:40])
             #print(fsin_s[r])
             #print('')
@@ -322,7 +322,7 @@ def main(fore,last):
         print('---------------------------------')
         print('| '+bx_s[last[0]][40:]+' | '+bx_s[last[0]][:40]+' | |')
         for r in range(last[0]):
-            print('| '+bx_s[last[0]-r-1][40:]+' | '+bx_s[last[0]-r-1][:40]+' | '+kk_x[r+fore[0]][:40]+'|')
+            print('| '+bx_s[last[0]-r-1][40:]+' | '+bx_s[last[0]-r-1][:40]+' | '+kk_x[r+fore[0]][0:]+'|')
             #print(kk_x[r+fore[0]][:40])
             
             #print(bx_s[last[0]-r-1])
@@ -331,6 +331,6 @@ def main(fore,last):
             print(kk_x[i])
     
 
-for i in range(64):
+for i in range(46,47):
     main([9,64,i,1],[8,64,i,0])
     
